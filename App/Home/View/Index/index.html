@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <title>{$Think.CONFIG.sitename}</title>
+    <meta name="Description" content="{$Think.CONFIG.description}">
+    <meta name="Keywords" content="{$Think.CONFIG.keywords}">
+    <meta name="referrer" content="no-referrer">
+    
+    <link href="Public/kindeditor/48/css/bootstrap.min.css" rel="stylesheet">
+    <link href="Public/kindeditor/48/css/font-awesome.min.css" rel="stylesheet">
+    <script src="Public/kindeditor/48/js/jquery-1.12.1.min.js"></script>
+    <script src="Public/kindeditor/48/js/bootstrap.min.js"></script>
+    <script src="Public/kindeditor/48/js/old.echarts.min.js"></script>
+    <script src="Public/kindeditor/48/js/clipboard.min.js"></script>
+    <script src="Public/kindeditor/48/js/html2canvas.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="http://xiyouquanweb.oss-cn-beijing.aliyuncs.com/48/js/html5shiv.min.js"></script>
+    <script src="http://xiyouquanweb.oss-cn-beijing.aliyuncs.com/48/js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="/Public/kindeditor/css/index-3.6.css">
+</head>
+<body>
+<div id="explainBox">
+    <div>
+        <div id="explain"></div>
+        <img src="/Public/kindeditor/48/image/resultBorder.jpg" alt="">
+    </div>
+</div>
+<div id="home">
+    <div class="home-top">
+        <h1>{$Think.CONFIG.title}</h1>
+        <h2>- {$Think.CONFIG.description} -</h2>
+        <img src="/Public/kindeditor/48/image/indexIcon.png" alt="">
+        <h3>奢单APP</h3>
+    </div>
+    <div class="home-bottom">
+        <button id="start" onclick="start()">开始测试</button>
+        <div class="promptMsg">注：本测试不会收集您的任何个人信息</div>
+    </div>
+</div>
+<div id="subjectBox" style="display: none">
+    <canvas id="progress"></canvas>
+    <div id="subjectList"></div>
+</div>
+<div id="result" style="display: none">
+    <h2>主人格分布</h2>
+    <div class="tips">（点击具体名词可查看人格说明）</div>
+    <div id="chart"></div>
+
+    <h2>详细性格组成</h2>
+    <div class="tips">（点击具体名词可查看性格说明）</div>
+    <div class="canvasBox" id="characterCanvasBox"></div>
+    <div>
+        <canvas class="ballCanvas" id="characterBallCanvas1"></canvas>
+        <canvas class="ballCanvas" id="characterBallCanvas2"></canvas>
+        <canvas class="ballCanvas" id="characterBallCanvas3"></canvas>
+    </div>
+    <div class="chartAllBox chartAllShow">
+        <span>查看全部</span>
+        <img src="/Public/kindeditor/48/image/showAll.png" alt="">
+    </div>
+    <div class="chartBox">
+        <div id="characterChart"></div>
+        <div class="chartAllBox chartAllHide">
+            <span>收起</span>
+            <img src="/Public/kindeditor/48/image/hideAll.png" alt="">
+        </div>
+    </div>
+
+
+    <h2>可能喜欢的玩法</h2>
+    <div class="tips">（点击具体名词可查看玩法说明）</div>
+    <div class="canvasBox" id="playCanvasBox"></div>
+    <div>
+        <canvas class="ballCanvas" id="playBallCanvas1"></canvas>
+        <canvas class="ballCanvas" id="playBallCanvas2"></canvas>
+        <canvas class="ballCanvas" id="playBallCanvas3"></canvas>
+    </div>
+    <div class="chartAllBox chartAllShow">
+        <span>查看全部</span>
+        <img src="/Public/kindeditor/48/image/showAll.png" alt="">
+    </div>
+    <div class="chartBox">
+        <div id="playChart"></div>
+        <div class="chartAllBox chartAllHide">
+            <span>收起</span>
+            <img src="/Public/kindeditor/48/image/hideAll.png" alt="">
+        </div>
+    </div>
+
+
+    <div class="btn-box" id="btn-box">
+        <img id="qrCode" class="qrCode" src="/Public/kindeditor/48/image/qrCode1.jpg" alt="">
+        <button class="btn" id="copy" data-clipboard-action="copy">复制链接</button>
+        <button class="btn" id="pictures" onclick="downloadForJS()">保存结果</button>
+        <a id="downLoad" href=""></a>
+    </div>
+</div>
+<div id="tips"></div>
+<script src="/Public/kindeditor/js/index-3.6.js"></script>
+</body>
+</html>
+
+
